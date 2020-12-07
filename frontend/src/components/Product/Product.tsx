@@ -1,7 +1,15 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Props } from "./types";
 
-const Product = ({ _id, image, name, rating, numReviews, price }) => {
+const Product: React.FC<Props> = ({
+  _id,
+  image,
+  name,
+  rating,
+  numReviews,
+  price,
+}) => {
   return (
     <Card className="my-3 p-3 rounded">
       <a href={`/product/${_id}`}>
