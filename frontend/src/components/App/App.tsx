@@ -1,25 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from 'routes';
 import { Container } from 'react-bootstrap';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import HomeScreen from 'screens/HomeScreen';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farFaStar } from '@fortawesome/free-regular-svg-icons';
+import iconLibrary from 'data/iconLib';
+import css from './styles.module.css';
 
-library.add(faStar, farFaStar, faStarHalfAlt);
+iconLibrary();
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header />
-      <main className="py-3">
+      <main className={css.main}>
         <Container>
-          <HomeScreen />
+          <Routes />
         </Container>
       </main>
       <Footer />
-    </>
+    </Router>
   );
 };
 
